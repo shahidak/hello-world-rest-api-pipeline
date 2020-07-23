@@ -9,18 +9,18 @@ public class HelloWorldController {
 
 	@GetMapping(path = "/hello-world")
 	public String helloWorld() {
-		return "Hello World";
+		return "Hello World v2";
 	}
 
 	@GetMapping(path = "/hello-world-bean")
 	public HelloWorldBean helloWorldBean() {
 		//throw new RuntimeException("Some Error has Happened! Contact Support at ***-***");
-		return new HelloWorldBean("Hello World - Changed");
+		return new HelloWorldBean("Hello World - Changed to v2");
 	}
 	
 	///hello-world/path-variable/in28minutes
 	@GetMapping(path = "/hello-world/path-variable/{name}")
 	public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
-		return new HelloWorldBean(String.format("Hello World, %s", name));
+		return new HelloWorldBean(String.format("Hello World with version 2, %s", name));
 	}
 }
